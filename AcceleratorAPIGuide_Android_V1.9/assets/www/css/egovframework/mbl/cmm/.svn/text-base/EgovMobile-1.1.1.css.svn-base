@@ -1,0 +1,876 @@
+﻿/*
+    Copyright 2011, jQuery Project
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+ */
+ 
+/* ----------------------------------------------------------------------------
+   EgovMobile Style Sheet
+   Description :  UX grid view component
+   Modification Information
+   수정일           수정자      수정내용
+   -------------    --------    ---------------------
+   2011.07.14       구지연      최초 생성
+ 
+   author   : 모바일 실행환경 개발팀 구지연
+   since    : 2011.07.14
+---------------------------------------------------------------------------- */
+@import url("./theme-1.1.1.css");
+@font-face {font-family: Verdana; src:url(../../../../fonts/verdana.ttf);}
+@font-face {font-family: Tahoma; src:url(../../../../fonts/tahoma.ttf);}
+@font-face {font-family: Helvetica; src:url(../../../../fonts/helvetica.ttf);}
+
+/* = Button Component
+   직각 버튼과 작은 버튼
+---------------------------------------------------------------------------- */
+.egov-btn-rectangle{ border-radius: 0 0 0 0; }
+.egov-btn-small { height: 28px; }
+.egov-btn-small-span { height: 10px; top: -5px; }
+
+/* = Panel Component
+---------------------------------------------------------------------------- */
+.egov-panel-pattern-a { background:#222222 url(../../../../images/egovframework/mbl/cmm/pattern.png) repeat; }
+.egov-panel-pattern-b { background:#CCCCCC url(../../../../images/egovframework/mbl/cmm/pattern.png) repeat; }
+.egov-panel-pattern-c { background:#F0F0F0 url(../../../../images/egovframework/mbl/cmm/pattern.png) repeat; }
+.egov-panel-pattern-d { background:#ffffff url(../../../../images/egovframework/mbl/cmm/pattern.png) repeat; }
+.egov-panel-pattern-e { background:#FAEB9E url(../../../../images/egovframework/mbl/cmm/pattern.png) repeat; }
+.egov-panel-pattern-f { background:#FCF0EE url(../../../../images/egovframework/mbl/cmm/pattern.png) repeat; }
+.egov-panel-pattern-g { background:#DDE9A9 url(../../../../images/egovframework/mbl/cmm/pattern.png) repeat; }
+	
+/* = Internal/External Link Component
+---------------------------------------------------------------------------- */
+ 
+/* = Label/Text Component
+---------------------------------------------------------------------------- */
+.egov-color-red { color:red }
+.egov-color-blue { color:blue; }
+.egov-color-green { color:green; }
+
+.egov-align-left { text-align: left;}
+.egov-align-right { text-align: right; }
+.egov-align-center { text-align: center; }
+
+.egov-font-helvetica { font-family: Helvetica; }
+.egov-font-verdana { font-family: Verdana; }
+.egov-font-tahoma { font-family: Tahoma; }
+
+   
+   
+
+.egov-font-size30 { font-size: 1.875em; }
+.egov-font-size25 { font-size: 1.563em; }
+.egov-font-size15 { font-size: 0.938em; }
+
+/* = Tabs Component
+---------------------------------------------------------------------------- */
+.ui-tabs-content {  display: none;  margin-top: -0.938em; }
+.ui-tabs-content-active {  display: block; }
+
+.egov-btn-corner-tl {
+	-moz-border-radius-topleft: 		1.5em;
+	-webkit-border-top-left-radius: 	1.5em;
+	-o-border-top-left-radius: 			1.5em;
+	border-top-left-radius: 			1.5em;
+}
+.egov-btn-corner-tr {
+	-moz-border-radius-topright: 		1.5em;
+	-webkit-border-top-right-radius: 	1.5em;
+	-o-border-top-right-radius: 		1.5em;
+	border-top-right-radius: 			1.5em;
+}
+
+/* = Form Component
+---------------------------------------------------------------------------- */
+
+/* = Menu Component
+---------------------------------------------------------------------------- */
+
+
+/* = Dialog Component
+---------------------------------------------------------------------------- */
+/*
+    jQuery Alert Dialogs Plugin
+    Version 1.1
+    Cory S.N. LaViska
+    14 May 2009
+ */
+#popup_container {
+    font-family: Arial, sans-serif;
+    font-size: 1.250em;
+    min-width: 230px; /* Dialog will be no smaller than this */
+    max-width: 230px; /* Dialog will wrap after this width */
+    -moz-border-radius: 0.313em;
+    -webkit-border-radius: 0.313em;
+    -o-border-radius: 0.313em;
+    border-radius: 0.313em;
+    -moz-box-shadow: 0 0.125em 0.313em #888;
+    -webkit-box-shadow: 0 0.125em 0.313em #888;
+    -o-box-shadow: 0 0.125em 0.313em #888;
+    box-shadow: 0 0.125em 0.313em #888;
+}
+
+#popup_title {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: default;
+    padding: 0.5em 0;
+    margin: 0em;
+}
+
+#popup_content { background: 16px 16px no-repeat;   padding: 0.5em 1em;    margin: 0em; }
+#popup_panel {  text-align: center; }
+#popup_panel input { width:100%; padding: 0.625em;	margin-bottom:5px; font-size:0.813em; 
+	-moz-border-radius: 0.313em; 
+	-webkit-border-radius: 0.313em;  
+	-o-border-radius: 0.313em; 
+	border-radius: 0.313em;  
+	-moz-box-shadow: 0 1px 2px #888;
+    -webkit-box-shadow: 1px 0 2px #888; 
+    -o-box-shadow: 1px 0 2px #888;
+    box-shadow: 0 1px 2px #888; }
+
+#popup_message { font-size:0.875em; line-height:110%;}
+#popup_prompt { padding: 0.313em 0; margin:1em 0 0; background:#fff; color:#666; font-size:0.750em; font-family:"Dotum"; text-shadow:none;}
+
+.ui-dialog-msg {
+margin-bottom:12px }
+
+/* Dialog Theme a~g */
+
+.ui-dialog-theme-a { background: #fff; color: #000; text-align:center; border: solid 0.200em #000;}
+.ui-dialog-theme-a h1 { color:#fff; text-shadow: 0 -1px 1px #000000; background: #111111; 
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0,   #3c3c3c), color-stop(1, #111111)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #3c3c3c, #111111); /* Chrome 10+, Saf5.1+ */
+    background-image: -moz-linear-gradient(top, #3c3c3c, #111111);
+    background-image: -o-linear-gradient(top, #3c3c3c, #111111);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3c3c3c', EndColorStr='#111111')";}
+
+.ui-dialog-theme-a input { color:#fff;  text-shadow: 0 -1px 1px #000000; border:solid 1px #333; background: #111111; 
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #3c3c3c), color-stop(1, #111111));/* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #3c3c3c, #111111); /* Chrome 10+, Saf5.1+ */
+    background-image: -moz-linear-gradient(top, #3c3c3c, #111111);
+    background-image: -o-linear-gradient(top, #3c3c3c, #111111);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3c3c3c', EndColorStr='#111111')"; }
+    
+.ui-dialog-theme-a #popup_cancel { background: #6a0202; border:solid 1px #560202; font-weight:bold;
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a51212),color-stop(1, #6a0202)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #a51212, #6a0202); /* Chrome 10+, Saf5.1+ */
+    background-image: -moz-linear-gradient(top, #a51212, #6a0202);
+    background-image: -o-linear-gradient(top, #a51212, #6a0202);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a51212', EndColorStr='#6a0202')";}
+
+/*****************************************/
+/*   Dialog theme b~f 임시 추가 
+      (2011.07.19) by 황민희           */
+/***************************************/
+/*------ b ------- */      
+.ui-dialog-theme-b { background: #fff; color: #000; text-align:center; border: solid 0.2em #305A81;}
+.ui-dialog-theme-b h1 { color:#fff; text-shadow: 0 -1px 1px #000000; redirect:EgovIntro.jspbackground: #111111; 
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #3E72A2), color-stop(1, #5F9AC4));
+    background-image: -webkit-linear-gradient(top, #3E72A2, #5F9AC4);
+    background-image: -moz-linear-gradient(top, #3E72A2, #5F9AC4);
+    background-image: -o-linear-gradient(top, #3E72A2, #5F9AC4);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3E72A2', EndColorStr='#5F9AC4')"; }
+
+.ui-dialog-theme-b input { color:#fff;  text-shadow: 0 -1px 1px #145072; font-weight: bold;  border:solid 1px #333; background: #111111; 
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #3E72A2), color-stop(1, #5F9AC4));
+    background-image: -webkit-linear-gradient(top, #3E72A2, #5F9AC4);
+    background-image: -moz-linear-gradient(top, #3E72A2, #5F9AC4);
+    background-image: -o-linear-gradient(top, #3E72A2, #5F9AC4);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3E72A2', EndColorStr='#5F9AC4')"; }
+    
+.ui-dialog-theme-b #popup_cancel { background: #EF8383; font-weight:bold;
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #A73E3E),color-stop(1, #6E1818));
+    background-image: -webkit-linear-gradient(top, #a51212, #6a0202);
+    background-image: -moz-linear-gradient(top, #a51212, #6a0202);
+    background-image: -o-linear-gradient(top, #a51212, #6a0202);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a51212', EndColorStr='#6a0202')"; }
+    
+/*------ c ------- */   
+.ui-dialog-theme-c { background: #fff; color: #000; text-align:center; border: solid 0.2em #7C7B7B;}
+.ui-dialog-theme-c h1 { color:#444; text-shadow: 0 -1px 1px #fff; background: #111111; 
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #DEDEDE), color-stop(1, #B2B2B2));
+    background-image: -webkit-linear-gradient(top, #DEDEDE, #B2B2B2);
+    background-image: -moz-linear-gradient(top, #DEDEDE, #B2B2B2);
+    background-image: -o-linear-gradient(top, #DEDEDE, #B2B2B2);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#DEDEDE', EndColorStr='#B2B2B2')"; }
+
+.ui-dialog-theme-c input { color:#444;  text-shadow: 0 -1px 1px #F6F6F6; font-weight: bold; border:solid 1px #7C7B7B; background: #111111; 
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #DEDEDE), color-stop(1, #B2B2B2));
+    background-image: -webkit-linear-gradient(top, #DEDEDE, #B2B2B2);
+    background-image: -moz-linear-gradient(top, #DEDEDE, #B2B2B2);
+    background-image: -o-linear-gradient(top, #DEDEDE, #B2B2B2);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#DEDEDE', EndColorStr='#B2B2B2')"; }
+    
+.ui-dialog-theme-c #popup_cancel { color: #F8E9E9; text-shadow: 0 -1px 1px #CD8080; background: #EF8383; font-weight:bold;
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #A73E3E),color-stop(1, #6E1818));
+    background-image: -webkit-linear-gradient(top, #a51212, #6a0202);
+    background-image: -moz-linear-gradient(top, #a51212, #6a0202);
+    background-image: -o-linear-gradient(top, #a51212, #6a0202);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a51212', EndColorStr='#6a0202')"; }
+
+/*------ d ------- */   
+.ui-dialog-theme-d { background: #fff; color: #000; text-align:center; border: solid 0.2em #7C7B7B;}
+.ui-dialog-theme-d h1 { color:#444; text-shadow: 0 -1px 1px #fff; background: #111111; 
+    background-image: -moz-linear-gradient(top, #DDD, #BBB);    
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0,#DDD),color-stop(1,#BBB));
+    background-image: -moz-linear-gradient(linear,left top,left bottom, color-stop(0,#DDD),color-stop(1,#BBB));
+    background-image: -o-linear-gradient(top, #DDD, #BBB);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3c3c3c', EndColorStr='#111111')"; }
+
+.ui-dialog-theme-d input { color:#444;  text-shadow: 0 -1px 1px #FFFFFF; font-weight: bold; border:solid 1px #CCC; background: #FFFFFF; 
+    background-image: -moz-linear-gradient(top, #3c3c3c, #111111);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FFFFFF),color-stop(1,#FFFFFF));
+    background-image: -moz-linear-gradient(top, #FFFFFF, #FFFFFF);
+    background-image: -o-linear-gradient(linear,left top,left bottom,color-stop(0,#FFFFFF),color-stop(1,#FFFFFF));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3c3c3c', EndColorStr='#111111')"; }
+    
+.ui-dialog-theme-d #popup_cancel { color: #F8E9E9; text-shadow: 0 -1px 1px #CD8080; background: #EF8383; font-weight:bold; background-image: -moz-linear-gradient(top, #a51212, #6a0202);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #A73E3E),color-stop(1, #6E1818));
+    background-image: -webkit-linear-gradient(top, #A73E3E, #6E1818);
+    background-image: -moz-linear-gradient(top, #A73E3E, #6E1818);
+    background-image: -o-linear-gradient(top, #A73E3E, #6E1818);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#A73E3E', EndColorStr='#6E1818')"; }
+
+
+/*------ e ------- */   
+.ui-dialog-theme-e { background: #fff; color: #000; text-align:center; border: solid 0.2em #F7C942;}
+.ui-dialog-theme-e h1 { color:#282828; text-shadow: 0 -1px 1px #fff; background: #111111; 
+    
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FADD58),color-stop(1,#FCECA4));
+    background-image: -webkit-linear-gradient(top, #FADD58, #FCECA4);
+    background-image: -moz-linear-gradient(top, #FADD58, #FCECA4);
+    background-image: -o-linear-gradient(top, #FADD58, #FCECA4);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FADD58', EndColorStr='#FCECA4')"; }
+
+.ui-dialog-theme-e input { color:#333;  text-shadow: 0 -1px 1px #FFFFFF; font-weight: bold; border:solid 1px #F7C942; background: #111111; 
+    background-image: -moz-linear-gradient(top, #3c3c3c, #111111);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FADD58),color-stop(1,#FCECA4));
+    background-image: -moz-linear-gradient(top, #FADD58, #FCECA4);
+    background-image: -o-linear-gradient(top, #FADD58, #FCECA4);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3c3c3c', EndColorStr='#111111')"; }
+    
+.ui-dialog-theme-e #popup_cancel { color: #F8E9E9; text-shadow: 0 -1px 1px #CD8080; background: #EF8383; font-weight:bold; background-image: -moz-linear-gradient(top, #a51212, #6a0202);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #A73E3E),color-stop(1, #6E1818));
+    background-image: -webkit-linear-gradient(top, #A73E3E, #6E1818);
+    background-image: -moz-linear-gradient(top, #A73E3E, #6E1818);
+    background-image: -o-linear-gradient(top, #A73E3E, #6E1818);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a51212', EndColorStr='#6a0202')"; 
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #A73E3E /*{d-bar-background-start}*/), to( #6E1818 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/);}
+ 
+ /*------ f ------- */   
+.ui-dialog-theme-f { background: #fff; color: #000; text-align:center; border: solid 0.200em #690B14;}
+.ui-dialog-theme-f h1 { color:#fff; text-shadow: 0 -1px 1px #fff; background: #111111; 
+    background-image: -moz-linear-gradient(top, #3c3c3c, #111111);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#A05052),color-stop(1,#CA0202));
+    background-image: -moz-linear-gradient(top, #A05052, #CA0202);
+    background-image: -o-linear-gradient(top, #A05052, #CA0202);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#A05052', EndColorStr='#CA0202')"; }
+
+.ui-dialog-theme-f input { color:#fff;  text-shadow: 0 -1px 1px #000000; border:solid 1px #333; background: #111111; 
+    background-image: -moz-linear-gradient(top, #3c3c3c, #111111);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#A05052),color-stop(1,#CA0202));
+    background-image: -moz-linear-gradient(top, #A05052, #CA0202);
+    background-image: -o-linear-gradient(top, #A05052, #CA0202);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3c3c3c', EndColorStr='#111111')"; }
+    
+.ui-dialog-theme-f #popup_cancel { color: #F8E9E9; text-shadow: 0 -1px 1px #CD8080; background: #EF8383; font-weight:bold; background-image: -moz-linear-gradient(top, #a51212, #6a0202);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #A73E3E),color-stop(1, #6E1818));
+    background-image: -webkit-linear-gradient(top, #A73E3E, #6E1818);
+    background-image: -moz-linear-gradient(top, #A73E3E, #6E1818);
+    background-image: -o-linear-gradient(top, #A73E3E, #6E1818);    
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a51212', EndColorStr='#6a0202')"; 
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #A73E3E /*{d-bar-background-start}*/), to( #6E1818 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/);}
+    
+ /*------ g ------- */   
+.ui-dialog-theme-g { background: #fff; color: #000; text-align:center; border: solid 0.200em #4B7404;}
+.ui-dialog-theme-g h1 { color:#fff; text-shadow: 0 -1px 1px #000000; background: #111111; 
+    background-image: -moz-linear-gradient(top, #3c3c3c, #111111);
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0,#8AB939),color-stop(1,#5A8909));
+    background-image: -moz-linear-gradient(top, #8AB939, #5A8909);
+    background-image: -o-linear-gradient(top, #8AB939, #5A8909);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#8AB939', EndColorStr='#5A8909')"; }
+
+.ui-dialog-theme-g input { color:#fff;  text-shadow: 0 -1px 1px #000000; font-weight:bold; border:solid 1px #4D6228; background: #4B7404; 
+    background-image: -moz-linear-gradient(top, #3c3c3c, #111111);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#8AB939), color-stop(1,#5A8909));
+    background-image: -moz-linear-gradient(top, #8AB939, #5A8909);
+    background-image: -o-linear-gradient(top, #8AB939, #5A8909);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#3c3c3c', EndColorStr='#111111')";}
+    
+.ui-dialog-theme-g #popup_cancel { color: #F8E9E9; text-shadow: 0 -1px 1px #CD8080; background: #EF8383; font-weight:bold; background-image: -moz-linear-gradient(top, #a51212, #6a0202);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #A73E3E),color-stop(1, #6E1818));
+    background-image: -webkit-linear-gradient(top, #A73E3E, #6E1818);
+    background-image: -moz-linear-gradient(top, #A73E3E, #6E1818);
+    background-image: -o-linear-gradient(top, #A73E3E, #6E1818);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a51212', EndColorStr='#6a0202')"; 
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #A73E3E /*{d-bar-background-start}*/), to( #6E1818 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #A73E3E /*{d-bar-background-start}*/, #6E1818 /*{d-bar-background-end}*/);}      
+     
+/* = Grid View Component
+---------------------------------------------------------------------------- */     
+.egov-grid .alpha { clear:both; }
+
+.egov-wid1, .egov-wid2, .egov-wid3, .egov-wid4, .egov-wid5, .egov-wid6, .egov-wid7, .egov-wid8, .egov-wid9, .egov-wid10, .egov-wid11, .egov-wid12 { margin: 0; padding: 0; border: 0; float: left; }
+
+.egov-grid { overflow: hidden; }
+
+.egov-grid .egov-wid1 { width: 8.333333333333334%; }
+.egov-grid .egov-wid2 { width: 16.666666666666668%; }
+.egov-grid .egov-wid3 { width: 25%; }
+.egov-grid .egov-wid4 { width: 33.333333333333336%; }
+.egov-grid .egov-wid5 { width: 41.66666666666667%; }
+.egov-grid .egov-wid6 { width: 50%; }
+.egov-grid .egov-wid7 { width: 58.333333333333336%; }
+.egov-grid .egov-wid8 { width: 66.66666666666667%; }
+.egov-grid .egov-wid9 { width: 75%; }
+.egov-grid .egov-wid10 { width: 83.33333333333334%; }
+.egov-grid .egov-wid11 { width: 91.66666666666667%; }
+.egov-grid .egov-wid12 { width: 100%; }
+
+/* = List View Component
+---------------------------------------------------------------------------- */
+
+/* = Date/Time Picker Component
+---------------------------------------------------------------------------- */
+div.hasDatepicker{ display: block; padding: 0; overflow: visible;  margin:0.500em 0; }
+.ui-datepicker {  overflow: visible; margin: 0; max-width: 100%;  }
+.ui-datepicker .ui-datepicker-header { position:relative; padding:.4em 0; border-bottom: 0; font-weight: bold; }
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { padding: 1px 0 1px 2px; position:absolute; top: .5em; margin-top: 0; text-indent: -9999px; }
+
+.ui-datepicker .ui-datepicker-prev { left:0.375em; }
+.ui-datepicker .ui-datepicker-next { right:0.375em; }
+.ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }
+.ui-datepicker .ui-datepicker-title select { font-size:1em; margin:1px 0; }
+.ui-datepicker select.ui-datepicker-month-year {width: 100%;}
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year { width: 49%;}
+.ui-datepicker table {width: 100%; border-collapse: collapse; margin:0; }
+.ui-datepicker td { border-width: 1px; padding: 0; text-align: center; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em 0; font-weight: bold; margin: 0; border-width: 0; text-align: center; text-decoration: none; }
+
+.ui-datepicker-calendar th { padding-top: .3em; padding-bottom: .3em; }
+.ui-datepicker-calendar th span, .ui-datepicker-calendar span.ui-state-default { opacity: .3; }
+.ui-datepicker-calendar td a { padding-top: .5em; padding-bottom: .5em; }
+
+.min-width-480 div.hasDatepicker  { width: 100%; display: inline-block; margin: 0.625em; }
+
+
+
+/*
+ * jQuery Mobile Framework : plugin to provide a date and time picker.
+ * Copyright (c) JTSage
+ * CC 3.0 Attribution.  May be relicensed without permission/notification.
+ * https://github.com/jtsage/jquery-mobile-datebox
+ */
+ 
+/* Base input element Styles */
+
+.ui-input-datebox { width: 97%; background-image: none; padding: .4em; line-height: 1.4; font-size: 16px; display: block; padding-top: 0px; padding-bottom: 0px; } 
+.ui-input-datebox { min-height: 38px; } /* Fix for IE8 */
+.ui-input-datebox .ui-btn-icon-notext { margin-top: 5px !important; margin-bottom: 5px !important; }
+.ui-input-datebox input { width: 100% !important; padding: 0 !important; margin-top: 5px !important; margin-right: -40px !important; border: 1px solid transparent !important; vertical-align: middle; display: inline-block !important; background-color: transparent; zoom: 1; *display: inline; }
+.ui-input-datebox input:focus { outline: none;}
+.ui-input-datebox .ui-btn-text {display: none;}
+
+@media all and (min-width: 450px){
+  .ui-input-datebox { width: 60%; display: inline-block; zoom:1; *display: inline; }
+}
+
+/* Full width if in a grid, ignore the media query */
+.ui-grid-a .ui-input-datebox { width: 97%; }
+.ui-grid-b .ui-input-datebox { width: 97%; }
+.ui-grid-c .ui-input-datebox { width: 97%; }
+.ui-grid-d .ui-input-datebox { width: 97%; }
+
+/* Calendar Mode Styles */
+
+.ui-datebox-gridheader { text-align: center; }
+.ui-datebox-gridheader h4 { text-align: center; display: inline-block; margin-top: 10px; margin-bottom: 10px; zoom:1; *display: inline;}
+.ui-datebox-gridplus { float: right; }
+.ui-datebox-gridminus { float: left; }
+.ui-datebox-gridplus-rtl { float: left; }
+.ui-datebox-gridminus-rtl { float: right; }
+.ui-datebox-gridrow { margin-left: 5px; margin-right: 5px; }
+.ui-datebox-grid { clear: both; margin-bottom: 5px; }
+.ui-datebox-griddate { width: 36px; height: 30px; display: inline-block; vertical-align: middle; text-align: center; line-height: 30px; font-weight: bold; font-size: 12px; zoom:1; *display: inline;}
+.ui-datebox-griddate-empty { border: 1px solid transparent; color: #888; }
+.ui-datebox-griddate-label { height: 15px !important; line-height: 15px !important; color: black;}
+.ui-datebox-griddate-disable { color: #888; }
+
+/* Android Mode Styles */
+
+.ui-datebox-header h4 { margin-top: 5px; margin-bottom: 5px; text-align: center; }
+.ui-datebox-controls { text-align: center; }
+.ui-datebox-controls div { width: 77px; text-align: center; display: inline-block; zoom: 1; *display: inline;}
+.ui-datebox-scontrols { text-align: center; }
+.ui-datebox-scontrols div { width: 55px; text-align: center; display: inline-block; zoom: 1; *display: inline;}
+.ui-datebox-scontrols .ui-datebox-sinput { width: 68px; }
+.ui-datebox-scontrols .ui-datebox-sinput input { width: 48px; text-align: center; margin-left: 3px; }
+.ui-datebox-input { width: 74px !important; margin-left: 1px; margin-right: 1px; text-align: center !important; display: inline-block !important; zoom:1; *display: inline; }
+
+/* Slide Mode Styles */
+
+.ui-datebox-slide { width: 280px; margin-left: auto; margin-right: auto;}
+.ui-datebox-sliderow-d { margin-bottom: 5px; text-align: center; height: 40px; width: 280px; overflow: hidden;}
+.ui-datebox-sliderow-ym { margin-bottom: 5px; text-align: center; height: 32px; width: 280px; overflow: hidden;}
+.ui-datebox-sliderow-hi { text-align: center; height: 32px; width: 280px; overflow: hidden;}
+.ui-datebox-sliderow-int { display: inline-block; white-space: nowrap;}
+
+.ui-datebox-slideyear { text-align: center; display: inline-block; zoom:1; *display:inline; width: 84px; vertical-align: middle; line-height: 30px; height: 30px; font-size: 14px; font-weight: bold; }
+.ui-datebox-slidemonth { text-align: center; display: inline-block; zoom:1; *display:inline; width: 51px; vertical-align: middle; line-height: 30px; height: 30px; font-size: 12px; font-weight: bold; }
+.ui-datebox-slideday { text-align: center; display: inline-block; zoom:1; *display:inline; width: 32px; vertical-align: middle; line-height: 20px; height: 38px; font-size: 14px; font-weight: bold; }
+.ui-datebox-slidehour { text-align: center; display: inline-block; zoom:1; *display:inline; width: 32px; vertical-align: middle; line-height: 22px; height: 24px; font-size: 14px; font-weight: bold; }
+.ui-datebox-slidemins { text-align: center; display: inline-block; zoom:1; *display:inline; width: 32px; vertical-align: middle; line-height: 22px; height: 24px; font-size: 14px; font-weight: bold; }
+.ui-datebox-slidearrow { text-align: center; display: inline-block; zoom:1; *display:inline; width: 10px; vertical-align: middle; line-height: 38px; height: 38px; font-size: 10px; font-weight: bold; }
+.ui-datebox-slidewday { font-size: 10px; font-weight: normal; }
+
+/* Flip Mode Styles */
+.ui-datebox-flipcontent { text-align: center; height: 125px; margin-bottom: -40px;}
+.ui-datebox-flipcontent div { margin-left: 3px; margin-right: 3px; width: 77px; height: 120px; display: inline-block; text-align: center; zoom: 1; *display: inline; overflow: hidden;}
+.ui-datebox-flipcenter { border: 1px solid #eee; height: 40px; margin-left: 10px; width: 260px; margin-right: auto; margin-left: auto; position: relative; top: -45px;}
+.ui-datebox-flipcontent ul { list-style-type: none; display: inline; }
+.ui-datebox-flipcontent li { height: 30px; }
+.ui-datebox-flipcontent li span { margin-top: 7px; display: block; }
+/* Shared Styles */
+
+.ui-datebox-container { border: 5px solid #111 !important; width: 280px; }
+.ui-datebox-screen { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; }
+.ui-datebox-screen-modal { background-color: black; -webkit-opacity: 0.8; -o-opacity: 0.8; -moz-opacity: 0.8; opacity:.80; filter: alpha(opacity=80); }
+.ui-datebox-hidden { display: none; }
+.ui-dialog .ui-datebox-container { border: none !important; }
+.ui-datebox-collapse a { display: inline-block; width: 45% }
+
+.ui-datebox-inline { margin-top: 5px; border: 5px solid #111111 !important; margin-left: auto; margin-right: auto; text-align: center; }
+.ui-datebox-inlineblind { margin-top: 5px; border: 5px solid #111111 !important; margin-left: auto; margin-right: auto; text-align: center; }
+
+/* Component containers */
+.ui-widget { font-family: Verdana,Arial,sans-serif/*{ffDefault}*/; font-size: 1.1em/*{fsDefault}*/; }
+.ui-widget .ui-widget { font-size: 1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif/*{ffDefault}*/; font-size: 1em; }
+.ui-widget-content { border: 1px solid #aaaaaa/*{borderColorContent}*/; background: #ffffff/*{bgColorContent}*/ ; color: #222222/*{fcContent}*/; }
+.ui-widget-content a { color: #222222/*{fcContent}*/; }
+.ui-widget-header { border: 1px solid #aaaaaa/*{borderColorHeader}*/; background: #cccccc/*{bgColorHeader}*/ ; color: #222222/*{fcHeader}*/; font-weight: bold; }
+.ui-widget-header a { color: #222222/*{fcHeader}*/; }
+
+/* Corner radius */
+.ui-corner-tl { -o-border-radius-topleft: 0.250em/*{cornerRadius}*/; -moz-border-radius-topleft: 0.250em/*{cornerRadius}*/; -webkit-border-top-left-radius: 0.250em/*{cornerRadius}*/; border-top-left-radius: 0.250em/*{cornerRadius}*/; }
+.ui-corner-tr { -o-border-radius-topright: 0.250em/*{cornerRadius}*/; -moz-border-radius-topright: 0.250em/*{cornerRadius}*/; -webkit-border-top-right-radius: 0.250em/*{cornerRadius}*/; border-top-right-radius: 0.250em/*{cornerRadius}*/; }
+.ui-corner-bl { -o-border-radius-bottomleft: 0.250em/*{cornerRadius}*/; -moz-border-radius-bottomleft: 0.250em/*{cornerRadius}*/; -webkit-border-bottom-left-radius: 0.250em/*{cornerRadius}*/; border-bottom-left-radius: 0.250em/*{cornerRadius}*/; }
+.ui-corner-br { -o-border-radius-bottomright: 0.250em/*{cornerRadius}*/;-moz-border-radius-bottomright: 0.250em/*{cornerRadius}*/; -webkit-border-bottom-right-radius: 0.250em/*{cornerRadius}*/; border-bottom-right-radius: 0.250em/*{cornerRadius}*/; }
+.ui-corner-top { -o-border-radius-topleft: 0.250em/*{cornerRadius}*/; -moz-border-radius-topleft: 0.250em/*{cornerRadius}*/; -webkit-border-top-left-radius: 0.250em/*{cornerRadius}*/; border-top-left-radius: 0.250em/*{cornerRadius}*/; -moz-border-radius-topright: 0.250em/*{cornerRadius}*/; -webkit-border-top-right-radius: 0.250em/*{cornerRadius}*/; border-top-right-radius: 0.250em/*{cornerRadius}*/; }
+.ui-corner-bottom { -o-border-radius-bottomleft: 0.250em/*{cornerRadius}*/; -moz-border-radius-bottomleft: 0.250em/*{cornerRadius}*/; -webkit-border-bottom-left-radius: 0.250em/*{cornerRadius}*/; border-bottom-left-radius: 0.250em/*{cornerRadius}*/; -moz-border-radius-bottomright: 0.250em/*{cornerRadius}*/; -webkit-border-bottom-right-radius: 0.250em/*{cornerRadius}*/; border-bottom-right-radius: 0.250em/*{cornerRadius}*/; }
+.ui-corner-right {  -o-border-radius-topright: 0.250em/*{cornerRadius}*/; -moz-border-radius-topright: 0.250em/*{cornerRadius}*/; -webkit-border-top-right-radius: 0.250em/*{cornerRadius}*/; border-top-right-radius: 0.250em/*{cornerRadius}*/; -moz-border-radius-bottomright: 0.250em/*{cornerRadius}*/; -webkit-border-bottom-right-radius: 0.250em/*{cornerRadius}*/; border-bottom-right-radius: 0.250em/*{cornerRadius}*/; }
+.ui-corner-left { -o-border-radius-topleft: 0.250em/*{cornerRadius}*/; -moz-border-radius-topleft: 0.250em/*{cornerRadius}*/; -webkit-border-top-left-radius: 0.250em/*{cornerRadius}*/; border-top-left-radius: 0.250em/*{cornerRadius}*/; -moz-border-radius-bottomleft: 0.250em/*{cornerRadius}*/; -webkit-border-bottom-left-radius: 0.250em/*{cornerRadius}*/; border-bottom-left-radius: 0.250em/*{cornerRadius}*/; }
+.ui-corner-all { -o-border-radius: 0.250em/*{cornerRadius}*/; -moz-border-radius: 0.250em/*{cornerRadius}*/; -webkit-border-radius: 0.250em/*{cornerRadius}*/; border-radius: 0.250em/*{cornerRadius}*/; }
+
+/*DatePicker Andorid */
+.ui-picker-container { border: 0.313em solid #fff !important; width: 250px; -moz-border-radius:0.563em; -webkit-border-radius:0.563em; -o-border-radius:0.563em; border-radius:0.563em;}
+.ui-picker-footer { background:#bcbcbc; padding:0.375em; overflow:hidden;}
+.ui-picker-footer a { text-decoration:none;}
+.ui-picker-footer span { text-decoration:none;}
+.ui-btn-corner-picker {
+    -moz-border-radius:                 .4em;
+    -o-border-radius:                 	.4em;
+    -webkit-border-radius:              .4em;
+    border-radius:                      .4em;
+}
+.ui-btn-bottom-pick {
+    border: 1px solid       #999999;
+    background:             #c2c2c2;
+    font-weight: bold;
+    color:                  #252525;
+    text-shadow: 0 1px 1px #fff;
+    background-image: linear-gradient(#e8e8e8, #c2c2c2);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,    #e8e8e8),color-stop(1,  #c2c2c2));
+    background-image: -webkit-linear-gradient(top, #e8e8e8, #c2c2c2);
+    background-image: -moz-linear-gradient(top, #e8e8e8, #c2c2c2);
+    background-image: -o-linear-gradient(top, #e8e8e8, #c2c2c2);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#e8e8e8', EndColorStr='#c2c2c2')";
+    text-decoration:none;
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #e8e8e8 /*{d-bar-background-start}*/), to( #c2c2c2 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #e8e8e8 /*{d-bar-background-start}*/, #c2c2c2 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #e8e8e8 /*{d-bar-background-start}*/, #c2c2c2 /*{d-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #e8e8e8 /*{d-bar-background-start}*/, #c2c2c2 /*{d-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #e8e8e8 /*{d-bar-background-start}*/, #c2c2c2 /*{d-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #e8e8e8 /*{d-bar-background-start}*/, #c2c2c2 /*{d-bar-background-end}*/);
+}
+.ui-picker-controls { margin:0 1.250em; text-align:center; }
+.ui-picker-controls div { width:45px; text-align: center; display: inline-block;}
+.ui-picker-controls div span {display:block;}
+.ui-btn-picker { 
+    border: 1px solid       #222;
+    background:             #333333;
+    font-weight: bold;
+    color:                  #fff;
+    text-shadow: 0 -1px 1px #000;
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #555555), color-stop(1, #333333));
+    background-image: -webkit-linear-gradient(top, #555555, #333333);
+    background-image: -moz-linear-gradient(top, #555555, #333333);
+    background-image: -o-linear-gradient(top, #555555, #333333);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#555555', EndColorStr='#333333')";
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #555555 /*{d-bar-background-start}*/), to( #333 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #555555 /*{d-bar-background-start}*/, #333 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #555555 /*{d-bar-background-start}*/, #333 /*{d-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #555555 /*{d-bar-background-start}*/, #333 /*{d-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #555555 /*{d-bar-background-start}*/, #333 /*{d-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #555555 /*{d-bar-background-start}*/, #333 /*{d-bar-background-end}*/);}
+    
+.ui-btn-picker-top {
+    margin-top:7px;
+    height:26px;
+    border: 1px solid #828282;
+    border-bottom:none;
+    background-image: linear-gradient(#f1f1f1, #c1c1c1);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1f1f1),color-stop(1, #c1c1c1));
+    background-image: -webkit-linear-gradient(top, #f1f1f1, #c1c1c1);
+    background-image: -moz-linear-gradient(top, #f1f1f1, #c1c1c1);
+    background-image: -o-linear-gradient(top, #f1f1f1, #c1c1c1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f1f1', EndColorStr='#c1c1c1')";
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #f1f1f1 /*{d-bar-background-start}*/), to( #c1c1c1 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #f1f1f1 /*{d-bar-background-start}*/, #c1c1c1 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #f1f1f1 /*{d-bar-background-start}*/, #c1c1c1 /*{d-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #f1f1f1 /*{d-bar-background-start}*/, #c1c1c1 /*{d-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #f1f1f1 /*{d-bar-background-start}*/, #c1c1c1 /*{d-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #f1f1f1 /*{d-bar-background-start}*/, #c1c1c1 /*{d-bar-background-end}*/);
+	
+    -moz-border-radius-topright:        .3em;
+    -webkit-border-top-right-radius:    .3em;
+    -o-border-top-right-radius:    .3em;
+    border-top-right-radius:            .3em;
+    -moz-border-radius-topleft:         .3em;
+    -webkit-border-top-left-radius:     .3em;
+    -o-border-top-left-radius:     .3em;
+    border-top-left-radius:             .3em; }
+
+.ui-btn-picker-mid {border-left: 1px solid #828282; border-right: 1px solid #828282;}
+
+/* DatePicker Theme */
+.ui-picker-thema-a { background:#434343; padding:0.625em; }
+.ui-picker-thema-a header { margin:0.313em 1.250em ; border-bottom:1px solid #fff;}
+.ui-picker-thema-a header h1 { text-align:center; color:#fff; font-size:0.875em;text-shadow:none;}
+
+/* = Check Box Component
+---------------------------------------------------------------------------- */
+
+/* = Radio button Component
+---------------------------------------------------------------------------- */
+
+/* = Icon Component
+---------------------------------------------------------------------------- */
+.ui-icon {
+	background: 						#666;
+	background: 						rgba(0,0,0,.4);
+    background-image: url(../../../../images/egovframework/mbl/cmm/icons-18-white.png);
+	background-repeat: no-repeat;
+	-o-border-radius: 					9px;
+	-moz-border-radius: 				9px;
+	-webkit-border-radius: 				9px;
+	border-radius: 						9px;
+}
+
+/* custom icons */
+.ui-icon-phone {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ic-phone.png);
+    background-repeat: no-repeat;   
+}
+.ui-icon-mail {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ic-mail.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-alt {
+    background:                         #fff;
+    background:                         rgba(255,255,255,.3);
+    background-image: url(../../../../images/egovframework/mbl/cmm/icons-18-black.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-gps {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ic-gps.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-audio {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ic-audio.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-camera {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ic-camera.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-file {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ic-file.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-mic {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ic-mic.png);
+    background-repeat: no-repeat;
+}
+
+.ui-icon-explorer {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ic-explorer.png);
+    background-repeat: no-repeat;
+}
+
+
+/* HD/"retina" sprite
+-----------------------------------------------------------------------------------------------------------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min--o-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 240dpi) {
+        .ui-icon-plus, .ui-icon-minus, .ui-icon-delete, .ui-icon-arrow-r, .ui-icon-arrow-l,
+        .ui-icon-arrow-u, .ui-icon-arrow-d, .ui-icon-check,.ui-icon-gear, .ui-icon-refresh,
+        .ui-icon-forward, .ui-icon-back, .ui-icon-grid, .ui-icon-star, .ui-icon-alert,
+        .ui-icon-info, .ui-icon-home, .ui-icon-search, .ui-icon-checkbox-off, .ui-icon-checkbox-on,
+        .ui-icon-radio-off, .ui-icon-radio-on, .ui-icon-num1, .ui-icon-num2
+        {
+        background-image: url(../../../../images/egovframework/mbl/cmm/icons-36-white.png);
+        -moz-background-size: 776px 18px;
+        -o-background-size: 776px 18px;
+        -webkit-background-size: 776px 18px;
+        background-size: 776px 18px;
+    }
+    .ui-icon-alt {  background-image: url(../../../../images/egovframework/mbl/cmm/icons-36-black.png) }
+}
+
+.ui-icon-plus { background-position: -0 50% }
+.ui-icon-minus { background-position: -36px 50% }
+.ui-icon-delete {   background-position: -72px 50% }
+.ui-icon-arrow-r {  background-position: -108px 50% }
+.ui-icon-arrow-l {  background-position: -144px 50% }
+.ui-icon-arrow-u {  background-position: -180px 50% }
+.ui-icon-arrow-d {  background-position: -216px 50% }
+.ui-icon-check { background-position: -252px 50% }
+.ui-icon-gear { background-position: -288px 50% }
+.ui-icon-refresh {  background-position: -324px 50% }
+.ui-icon-forward {  background-position: -360px 50%  }
+.ui-icon-back { background-position: -396px 50%  }
+.ui-icon-grid { background-position: -432px 50%  }
+.ui-icon-star { background-position: -468px 50%  }
+.ui-icon-alert { background-position: -504px 50% }
+.ui-icon-info { background-position: -540px 50% }
+.ui-icon-home { background-position: -576px 50% }
+.ui-icon-search {   background-position: -612px 50% }
+
+.ui-icon-checkbox-off {  background-position: -684px 50%  }
+.ui-icon-checkbox-on {  background-position: -648px 50%  }
+.ui-icon-radio-off { background-position: -756px 50% }
+.ui-icon-radio-on { background-position: -720px 50% }
+
+/* checks,radios */
+
+/* checks,radios */
+.ui-checkbox .ui-icon {
+	-o-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.ui-icon-checkbox-off,
+.ui-icon-radio-off {
+	background-color: transparent;	
+}
+.ui-icon-checkbox-on,
+.ui-checkbox-on .ui-icon,
+.ui-radio-on .ui-icon {
+	background-color: #4596ce; /* NOTE: this hex should match the active state color. It's repeated here for cascade */
+}
+.ui-icon-searchfield {
+	background-image: url(../../../../images/egovframework/mbl/cmm/icon-search-black.png);
+	background-size: 12px 12px;
+	background-repeat:no-repeat;
+	background-position: 10px 9px;
+}
+
+
+/* = Processing Dialog/Bar Component
+/*
+Copyright (c) 2011 Paul Bakaus, http://jqueryui.com/
+Version 1.8.13
+jQuery UI Authors (http://jqueryui.com/about)
+*/
+---------------------------------------------------------------------------- */
+.ui-progressbar { height:1.3em; text-align: left; }
+.ui-progressbar .ui-progressbar-value {margin: -0.063em; height:100%; }
+
+.ui-progressbar-a { background-image: url(../../../../images/egovframework/mbl/cmm/pbar-ani-a.gif ); }
+.ui-progressbar-b { background-image: url(../../../../images/egovframework/mbl/cmm/pbar-ani-b.gif ); }
+.ui-progressbar-c { background-image: url(../../../../images/egovframework/mbl/cmm/pbar-ani-c.gif ); }
+.ui-progressbar-d { background-image: url(../../../../images/egovframework/mbl/cmm/pbar-ani-d.gif ); }
+.ui-progressbar-e { background-image: url(../../../../images/egovframework/mbl/cmm/pbar-ani-e.gif ); }
+.ui-progressbar-f { background-image: url(../../../../images/egovframework/mbl/cmm/pbar-ani-f.gif ); }
+.ui-progressbar-g { background-image: url(../../../../images/egovframework/mbl/cmm/pbar-ani-g.gif ); }
+
+
+/*
+* 김연수 추가 시작
+* 프로그레스 바/다이어로그 수정
+* 2012.07.17
+*/
+.ui-icon-loading {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ajax-loader.png);
+    width: 40px;
+    height: 40px;
+    -o-border-radius: 1.250em;
+    -moz-border-radius: 1.250em;
+    -webkit-border-radius: 1.250em;
+    border-radius: 1.250em;
+    background-size: 35px 35px;
+}
+
+/* loading screen */
+.ui-loading .ui-mobile-viewport { overflow: hidden !important; }
+.ui-loading .ui-loader { display: block; }
+.ui-loading .ui-page { overflow: hidden;  }
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
+.ui-loader h1 { font-size: 15px; text-align: center; }
+.ui-loader .ui-icon { position: static; display: block; opacity: .9; margin: 0 auto; width: 35px; height: 35px; background-color: transparent; }
+
+
+/*
+* jQuery Mobile Framework
+* Copyright (c) jQuery Project
+* Dual licensed under the MIT (MIT-LICENSE.txt) or GPL (GPL-LICENSE.txt) licenses.
+*/
+.spin  {
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-webkit-animation-name: spin;	
+	-moz-animation-name: spin;
+	-o-animation-name: spin;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	-webkit-animation-iteration-count:  infinite;
+	-moz-animation-iteration-count:  infinite;
+	-o-animation-iteration-count:  infinite !important;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+	-o-animation-timing-function: linear;
+	-o-animation-delay: 0.1s;	
+	
+	/* opera mobile12 에서는 animation 미지원, pc버전에서 dialog가 회전하지 않는 부분은 추가적으로 -o-animation-delay를 주어야 함. - 2012-09-07 박지민 */
+}
+@-webkit-keyframes spin {
+	from {-webkit-transform: rotate(0deg);}
+  	to {-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin {
+	from {-moz-transform: rotate(0deg);}
+  	to {-moz-transform: rotate(360deg);}
+}
+
+@-o-keyframes spin {
+	from {-o-transform: rotate(0deg);}
+  	to {-o-transform: rotate(360deg);}
+}
+
+/*
+* 김연수 추가 끝
+* 2012.07.17
+*/
+
+
+.ui-icon-loadingB {
+    background-image: url(../../../../images/egovframework/mbl/cmm/ajax-loader-black.png);
+    width: 40px;
+    height: 40px;
+    -o-border-radius: 1.250em;
+    -moz-border-radius: 1.250em;
+    -webkit-border-radius: 1.250em;    
+    border-radius: 1.250em;
+    background-size: 2.188em 2.188em;
+}
+
+/* loading screen */
+.ui-loading .ui-mobile-viewport { overflow: hidden !important; }
+.ui-loading .ui-loader { display: block; }
+.ui-loading .ui-page { overflow: hidden;  }
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
+.ui-loader h1 { font-size: 15px; text-align: center; }
+.ui-loader .ui-icon { position: static; display: block; opacity: .9; margin: 0 auto; width: 35px; height: 35px; background-color: transparent; }
+
+
+.egov-loding { padding-top:0.313em; text-align:center; font-size: 0.938em; font-family: Helvetica, Arial, sans-serif; font-weight:bold;}
+
+/* = Selector/Switch Component
+---------------------------------------------------------------------------- */
+
+/* = Datapicker Component
+---------------------------------------------------------------------------- */
+.ui-shadow-inset {  -moz-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0)  !important;
+					-webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important;
+					-o-box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important;
+					box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0) !important; }
+					
+					
+					
+					
+.ui-listview-ul-li { background: #fff; color: #000; text-align:center; border: solid 0.200em #000;}
+
+/* 2012.08.22 gu ji yeon 추가 */
+.checkList {}
+.checkList li { position:relative }
+.checkList li.notxtno { position:relative;height:26px;}
+.detailBtn {position: absolute;top:0;right:0;z-index:99 }
+
+/*.checkDetail { padding:20px 16px 25px; overflow:hidden}
+.checkDetail .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li { padding:3px 0;}
+.checkLeft { width:79%;display:inline-block; margin:0; padding:0;}
+.checkRight { width:20%;display:inline-block; margin:0; padding:0;}	 readonly list 기본에 영향을 주는 부분 확인.. */
+
+
+/* 2012.09.05 박지민 추가  */
+
+.ui-selectmenu-hidden { top: -9999px !important; left: -9999px; }
+
+/* 2012.09.07 박지민 추가  */
+
+.ui-operacorner-mode { 
+	border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; 
+	border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important;
+	border-radius: 0px !important;	
+}
